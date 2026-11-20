@@ -1,0 +1,39 @@
+# 저장소_운영_규칙.md 7장 금지 목록
+# 비밀
+.env
+.env.*
+*.env
+*secret*
+*token*
+*credential*
+freellmapi-sync.json
+freellmapi.config.json
+
+# 큰 파일 (Google Drive에 둔다)
+*.pdf
+*.zip
+*.7z
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.mov
+*.mp3
+*.wav
+
+# Drive 전용
+_pdf_cache/
+*.gdoc
+*.gsheet
+*.gslides
+
+# 기기 고유
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+.venv/
+node_modules/

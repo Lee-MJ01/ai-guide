@@ -1,0 +1,17 @@
+{
+  "name": "ai-guide",
+  "owner": {
+    "name": "Lee-MJ01"
+  },
+  "metadata": {
+    "description": "Lee-MJ01의 개인 스킬 모음 (AI 공통 작업 가이드 저장소)"
+  },
+  "plugins": [
+    {
+      "name": "my-skills",
+      "source": "./plugins/my-skills",
+      "description": "자소서·기업분석·영상분석·PDF분석·FreeLLMAPI·Claude vs Codex 토론 스킬 6종",
+      "version": "1.0.0"
+    }
+  ]
+}
