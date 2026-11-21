@@ -10,8 +10,8 @@
     {
       "name": "my-skills",
       "source": "./plugins/my-skills",
-      "description": "자소서·기업분석·영상분석·PDF분석·FreeLLMAPI·Claude vs Codex 토론 스킬 6종",
-      "version": "1.0.0"
+      "description": "자소서·기업분석·영상분석·PDF분석·FreeLLMAPI·Claude vs Codex 토론·가이드 자료 등록 스킬 7종",
+      "version": "1.1.0"
     }
   ]
 }

@@ -41,6 +41,7 @@
 | AI 바꿔도 작업 기억 이어가기 | `05_LLM다루기/Basic-Memory_AI공용노트_MCP.md` | basic-memory MCP |
 | 스킬·플러그인 찾기, 새 PC 세팅 | `06_스킬_플러그인/index.md` | — |
 | 앱 화면(MVP)을 Figma 디자인 시스템으로 | `07_디자인/index.md` | Figma 커넥터 |
+| 영상·링크·PDF를 가이드에 정리해 넣기 | `00_공통기준/새_자료_정리_규칙.md` | ai-guide-intake |
 | 이 가이드 자체를 고치기·정리하기 | `00_공통기준/저장소_운영_규칙.md` | — |
 
 ## 2. 폴더 목차
@@ -55,7 +56,7 @@
 | `05_LLM다루기/` | LLM 도구, 에이전트, 원격제어, 기억(MCP), FreeLLMAPI·Claude Code 자료 목록 |
 | `06_스킬_플러그인/` | 스킬·플러그인 레지스트리, 컴퓨터별 설치 현황, 새 PC 세팅 |
 | `07_디자인/` | UI/UX, Figma 디자인 시스템 |
-| `plugins/my-skills/` | 내가 만든 스킬 6종 원문 (Claude Code 마켓플레이스 형식) |
+| `plugins/my-skills/` | 내가 만든 스킬 7종 원문 (Claude Code 마켓플레이스 형식) |
 | `scripts/` | 설치 스크립트 (`install-ecc.cmd`) |
 | `tools/index.md` | Drive에 있는 스킬 실행용 도구(`pdf_ingest.py`, `_pdf_cache`) 사용법 |
 | `_정리대기.md` | 접근 못 한 링크, md로 안 바꾼 Drive PDF 목록. 사용자가 "정리 대기 처리해 줘"라고 할 때만 연다 |
