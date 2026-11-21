@@ -10,4 +10,5 @@
 | `2026-11-16_조사_claude-video_유튜브강의를_스킬로_만드는법.md` | claude-video(`/watch`) 조사, 강의→스킬 아이디어 출처 | youtube-watch |
 | `[Drive]/03_조사계획/MarkItDown_guide.pdf` | (md 미정리) 문서→Markdown 변환 도구 안내 | pdf-drive-analyzer |
 
+- Claude Code에서 유튜브 자막·레딧·GitHub를 모을 때(브라우저 없이) → `05_LLM다루기/Agent-Reach_웹수집_CLI.md`
 - PDF는 원본을 바로 읽지 말고 `pdf-drive-analyzer`로 `[Drive]/_pdf_cache/`에 변환한 뒤 읽는다 (`tools/index.md`).
