@@ -30,6 +30,17 @@ Agent Reach 설치해 줘: https://raw.githubusercontent.com/Panniantong/Agent-R
 - **PyPI의 `agent-reach`는 다른 프로그램이다.** `pip install agent-reach` 하지 않는다.
 - 모든 파일은 `~/.agent-reach/` 한 곳에 모인다.
 
+**직접 설치할 때 (에이전트가 실제로 하는 일, 2026-11-22 시험)**
+```
+uv tool install https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip
+agent-reach setup          # 기본 채널 준비 + Claude Code 스킬 연결
+agent-reach version        # JSON이 나오면 정상
+agent-reach doctor --text  # 채널별 상태(네트워크 없이)
+agent-reach check youtube  # 실제 접속 시험
+```
+- 명령이 안 잡히면 `uv tool update-shell` 후 새 터미널. 업데이트는 `agent-reach update`.
+- `setup`이 스킬을 `~/.agents/skills/agent-reach/`에 만들고 `~/.claude/skills/agent-reach`로 연결한다. 그래서 Claude Code가 알아서 이 도구를 부른다.
+
 **확인·관리 (말로 요청)**
 - "Agent Reach 상태 점검해 줘" → youtube·web·github가 PASS면 끝
 - "레딧 추가해 줘" / "빼 줘", "Agent Reach 업그레이드", "Agent Reach 제거"(지울 목록을 먼저 보여 줌)
@@ -46,13 +57,20 @@ Agent Reach 설치해 줘: https://raw.githubusercontent.com/Panniantong/Agent-R
 
 - **주장:** GitHub 별 11만 3천 개 이상(소개 글, 2026-11-20). → 이번에 별 수는 다시 확인하지 못함.
 - **로그인 재사용 주의:** 로그인이 필요한 사이트는 처음 쓸 때 **내 Chrome에서 그 사이트의 로그인 정보를 복사**해 전용 브라우저에서 쓴다(비밀번호 저장소는 읽지 않는다고 함). 주 계정이 자동 접근으로 제한될 수 있어 README도 **부계정**을 권한다. API 키는 채팅에 붙이지 말고 터미널에서 `agent-reach configure groq-key`로 넣는다.
-- **레딧:** 소개 글은 로그인 없이 검색 결과 앞부분(약 1,000자)만 읽혔다고 했고, 현재 README는 레딧을 로그인 필요한 "선택" 채널로 분류한다. 버전에 따라 다르니 상태 점검 결과를 믿는다.
+- **레딧:** 소개 글은 로그인 없이 검색 결과 앞부분(약 1,000자)만 읽혔다고 했다. README 표는 레딧을 로그인이 필요한 "선택" 채널로 분류하는데, 1.6.1 설치 보고서는 로그인 없이 검색·본문·댓글이 된다고 표시한다. 버전마다 다르니 `agent-reach check reddit` 결과를 믿는다.
 - **결과 품질(소개 글 경험):** 무료 웹 검색은 횟수 제한이 있어 한 번 막히면 약 1시간 대기. 유튜브 자동 자막은 받아쓰기 오류가 섞임. "성공"이라도 로그인 안내문·제목만 가져온 경우가 있어 글자 수와 첫 문장을 확인. 결과 링크는 직접 열어 확인.
 - README에 사칭 코인·지갑 연결 사기 경고가 있다. 공식 토큰은 없다.
 
+## 직접 시험한 결과 (2026-11-22, 클라우드 작업 공간 Linux)
+
+- 위 `uv tool install`로 **2초 만에 설치**, 버전 1.6.1. yt-dlp·bili-cli 등이 함께 깔리고, 용량은 도구 약 40MB + `~/.agent-reach/` 약 120MB.
+- `agent-reach setup` 성공: 기본 기능 5/5 준비. 설치 보고서가 **중국어**로 나온다(한국어 설명을 따로 요청).
+- 1.6.1 설치 보고서 기준 로그인 없이 되는 것: GitHub(검색·문서·이슈·댓글), YouTube(검색·설명·자막), 웹(검색·읽기), **Reddit(검색·본문·댓글)**, LinkedIn 공개 공고. X·Instagram·Facebook은 로그인 없이는 검색 요약 정도만. → 소개 글(레딧 앞부분만)보다 지금 버전이 더 많이 된다.
+- **실제 읽기는 시험하지 못했다.** 그 작업 공간은 네트워크 허용 목록이 좁아 YouTube·웹 검색이 막혔고, GitHub는 세션 권한에 걸렸다. 내 PC의 Claude Code에서 `agent-reach check`로 확인해야 한다.
+
 ## 분석 한계
 
-- 직접 설치해 보지 않았다. 윈도우 동작은 소개 글도 미시험.
+- 설치·설정까지만 직접 했고, 실제 수집 품질은 소개 글의 경험에 기대고 있다. 윈도우 동작은 소개 글도 미시험.
 - 네이버 블로그·카페 지원은 소개 글 목차에만 있고 본문·README에서는 확인되지 않았다.
 
 ## 출처

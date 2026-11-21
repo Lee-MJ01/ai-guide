@@ -1,6 +1,6 @@
 # EarShot · 소리를 못 듣는 에이전트에게 귀를 달아 주는 도구
 
-> 요약: Claude Code가 효과음을 말로 요청해 만들고, 소리 파일을 말·숫자로 설명받게 해 주는 무료 오픈소스 도구. 노션 정리(v0.4.0 기준)와 현재 공식 README(1.0.0)를 비교해 설치법을 최신으로 맞췄다. | 언제: 영상·릴스·게임·앱에 효과음 넣기, Claude가 만든 영상 소리 점검 | 키워드: 효과음, SFX, 사운드, MCP, 영상 편집, hyperframes | 관련 스킬: earshot(플러그인), hyperframes | 출처: https://app.notion.com/p/Claude-EarShot-41006e6723208194875fc0e9032c68a1 , https://github.com/Leonxlnx/earshot | 갱신: 2026-11-22
+> 요약: Claude Code가 효과음을 말로 요청해 만들고, 소리 파일을 말·숫자로 설명받게 해 주는 무료 오픈소스 도구. 노션 정리(v0.4.0 기준)와 현재 공식 README(1.0.0)를 비교해 설치법을 최신으로 맞췄다. 직접 설치해 소리 만들기·MCP 연결까지 시험했다. | 언제: 영상·릴스·게임·앱에 효과음 넣기, Claude가 만든 영상 소리 점검 | 키워드: 효과음, SFX, 사운드, MCP, 영상 편집, hyperframes | 관련 스킬: earshot(플러그인), hyperframes | 출처: https://app.notion.com/p/Claude-EarShot-41006e6723208194875fc0e9032c68a1 , https://github.com/Leonxlnx/earshot | 갱신: 2026-11-22
 
 ## 자료 정보
 
@@ -50,6 +50,17 @@ claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- earshot mcp
 
 **내 작업에 붙이기:** hyperframes·Remotion으로 영상 만들기 → EarShot으로 효과음 세트 생성 → 마지막 판단은 내 귀로.
 
+## 직접 시험한 결과 (2026-11-22, 클라우드 작업 공간 Linux · Python 3.12 · uv)
+
+- `uv pip install "earshot[mcp] @ git+https://github.com/Leonxlnx/earshot"` → **9초 만에 설치**, `earshot --version` = 1.0.0. 모델 다운로드 없음.
+- `earshot make "a soft success sound" -o success.wav` → 4초(첫 실행, numba 컴파일 포함), 두 번째부터 약 2초. "a fast air whoosh" → `whoosh/fast` 0.3초짜리가 나오고 비슷한 후보 3개도 알려 준다.
+- `earshot make "three variations of a footstep on gravel" -o step.ogg` → 서로 다른 발소리 파일 3개.
+- `earshot kit init --preset calm -o kit.json` → `earshot kit render kit.json --out kit` → 64개 소리를 11초에 생성(벨·클릭·글자 효과 등 역할별). `earshot sfx list --kind whoosh` → 휙 소리 35개 목록. **노션의 sfx·kit 명령은 1.0에서도 그대로 동작한다.**
+- `earshot doctor`: 은행 252개·레시피 99개 확인. `listen` 추가 설치 전에는 describe·rank·sheet가 설치 명령 안내만 한다.
+- MCP: `claude mcp add earshot --scope user -e EARSHOT_THREADS=2 -- <venv>/bin/earshot mcp` → `claude mcp list`에서 Connected, 도구 20개 확인.
+- **못 한 것:** 듣기 모델(huggingface)과 CPU용 torch(download.pytorch.org)는 그 작업 공간의 네트워크 허용 목록에 없어 받지 못했다. 그래서 describe·rank·sheet는 시험하지 못했다. 내 PC에서는 문제없을 것이다.
+- **Windows에서:** `pip install` 한 줄 방식이면 venv 경로 차이(`.venv/Scripts/python`)를 신경 쓸 필요가 없다. mp3·ogg로 저장하거나 영상을 읽으려면 ffmpeg가 PATH에 있어야 한다.
+
 ## 주장과 확인할 점
 
 - **믿을 만한 것(공식 LIMITS 문서, 노션 요약):** 음량·타이밍·소리가 화면 컷에 맞는지 같은 측정값, 단독 효과음 하나의 종류 판정(점수 strong일 때), 후보 중 설명에 가장 맞는 것 고르기.
@@ -60,7 +71,7 @@ claude mcp add earshot --scope user -e EARSHOT_THREADS=3 -- earshot mcp
 
 ## 분석 한계
 
-- 직접 설치해 보지 않았다. 1.0에서 노션의 CLI 명령(describe·rank 등)이 같은 형식으로 남아 있는지는 README 본문 일부만 확인했다(MCP 도구 이름으로는 모두 있음). 쓰기 전에 `earshot doctor`와 `earshot --help`로 확인한다.
+- 설치와 소리 만들기(make·sfx·kit)·MCP 연결은 직접 시험했다. 듣기 기능(describe·rank·sheet)은 모델을 못 받아 시험하지 못했다. `earshot --help`에 명령은 모두 있다.
 - 노션 글이 소개하던 원본 릴스는 링크가 없어 보지 않았다.
 
 ## 출처

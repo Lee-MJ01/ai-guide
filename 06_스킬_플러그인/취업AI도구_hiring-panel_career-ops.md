@@ -1,6 +1,6 @@
 # 취업 AI 도구 2종 · hiring-panel(이력서 심사단) · career-ops(공고 거르기)
 
-> 요약: 이력서를 Claude 7명이 떨어뜨려 보고 고쳐 주는 hiring-panel 스킬과, 공고를 점수로 걸러 지원을 말려 주는 career-ops를 릴스 2개·소개 페이지·공식 README로 교차 확인해 정리했다. | 언제: 이력서 점검, 지원할 공고 고르기, 취업용 Claude Code 도구 설치 검토 | 키워드: 이력서 첨삭, ATS, 서류 심사, 공고 선별, 지원 관리, 커버레터 | 관련 스킬: kr-cover-letter, kr-company-research | 출처: https://www.instagram.com/p/Df0d_Dvh6Rf/ , https://shimteamjjang.vercel.app/resume , https://www.instagram.com/p/DfW3k3Iss51/ | 갱신: 2026-11-22
+> 요약: 이력서를 Claude 7명이 떨어뜨려 보고 고쳐 주는 hiring-panel 스킬과, 공고를 점수로 걸러 지원을 말려 주는 career-ops를 릴스 2개·소개 페이지·공식 README로 교차 확인해 정리했다. 둘 다 직접 설치해 봤고, hiring-panel은 가상 한글 이력서로 끝까지 돌렸다. | 언제: 이력서 점검, 지원할 공고 고르기, 취업용 Claude Code 도구 설치 검토 | 키워드: 이력서 첨삭, ATS, 서류 심사, 공고 선별, 지원 관리, 커버레터 | 관련 스킬: kr-cover-letter, kr-company-research | 출처: https://www.instagram.com/p/Df0d_Dvh6Rf/ , https://shimteamjjang.vercel.app/resume , https://www.instagram.com/p/DfW3k3Iss51/ | 갱신: 2026-11-22
 
 ## 자료 정보
 
@@ -60,6 +60,28 @@ claude                            # 첫 실행 때 대화로 이력서·희망 �
 - 저장소는 `santifer/career-ops` → `career-ops-hq/career-ops`로 옮겨졌다(옛 주소는 자동 이동). Node.js 필요.
 - 이미 `외부_추천_플러그인_25선.md`에 ★★★로 올라 있던 항목이다.
 
+## 직접 시험한 결과 (2026-11-22, 클라우드 작업 공간 Linux)
+
+**hiring-panel 1.0.0**
+- `claude plugin marketplace add alexyc9381/hiring-panel-skill` → `claude plugin install hiring-panel-skill@hiring-panel-skill --scope user` 로 설치 성공. 스킬은 `SKILL.md` 하나뿐(스크립트 없음)이라 가볍다.
+- 그 작업 공간의 Claude Code는 로그인이 안 돼 `/hiring-panel`을 직접 부르지 못했다. 대신 SKILL.md 절차를 그대로 따라 **가상 한글 이력서(신입 Java 백엔드) + 가상 공고**로 하위 에이전트 8번을 돌렸다.
+- 결과: 자동 심사 PASS(경계선), 채용 매니저 NO, 독자 5명은 PASS 2 · MAYBE 3. 7명 전원이 "성능 개선을 진행하였습니다"(수치 없음)와 "개발 참여·업무 지원"(본인 몫 불분명)을 짚었다. 기술 나열, 상투적인 자기소개, GitHub 링크 없음이 뒤를 이었다.
+- `[ADD]` 빈칸을 그대로 둔 고친 이력서는 자동 심사에서 **REJECT**(미완성 문서로 판단) → 릴스에서 말한 현상이 그대로 재현됐다. 빈칸을 내 사실로 채우는 단계가 핵심이다.
+- **한글 이력서도 문제없이 동작했다.** 심사자 답이 한국어로 나오게 하려면 실행할 때 "한국어로 답해"를 붙인다(스킬 자체는 영어로 쓰여 있음).
+- 결과 파일 예시(PANEL.md, RESUME-IMPROVED.md)는 가상 인물이라 저장소에 올리지 않았다.
+
+**career-ops 1.40.0**
+- `npx @santifer/career-ops init`이 약 8초 만에 `./career-ops`를 만들었다. PDF용 Playwright Chromium은 따로 `npx playwright install chromium`.
+- `npm run doctor`: 처음에는 `cv.md`, `config/profile.yml`, `modes/_profile.md`, `portals.yml` 네 개가 없다고 나온다. `claude`를 열면 대화로 채워 준다.
+- **한국어 모드가 있다:** `modes/ko/`(공고 평가 `gonggo.md`, 지원서 작성 `jiwon.md`, 공고 수집 `pipeline.md`, 공통 `_shared.md`). 포괄임금제·수습·4대 보험 같은 국내 조건을 평가하고 원티드·리멤버·잡코리아·사람인을 언급한다. 켜는 법: `config/profile.yml`에
+  ```yaml
+  language:
+    output: ko
+    modes_dir: modes/ko
+  ```
+  또는 세션 시작 때 "modes/ko 한국어 모드를 사용해".
+- 실제 공고 평가는 내 이력서가 필요해 돌리지 않았다.
+
 ## 바로 써먹을 것
 
 1. **공고 고르기:** 지원하려던 공고 1개를 career-ops에 붙여 넣고 4점 미만이면 접는다. 국내 공고는 기준을 `01_취업준비/채용공고_선별_가이드.md`와 함께 본다.
@@ -71,13 +93,13 @@ claude                            # 첫 실행 때 대화로 이력서·희망 �
 
 - **주장(career-ops 릴스):** 공고 740개 중 672개를 버리고 취업. → **확인:** README에 "740개 평가, 68개 지원, 면접 12번, 합격 1번"으로 적혀 있어 수치는 일치(740−68=672). 만든 사람은 그 회사를 6개월 뒤 그만두고 지금은 career-ops를 만든다고 밝힘.
 - **주장(hiring-panel 릴스):** 7명 모두 탈락. → 가상 인물 1명으로 한 실험이다. 일반화하지 말 것. README도 "면접을 보장하지 않는 구조화된 2차 의견"이라고 적음.
-- **확인할 점:** 두 도구 모두 영어권 채용(ATS·LinkedIn·Greenhouse 등) 기준으로 만들어졌다. 한글 이력서·국내 채용 사이트(사람인·잡코리아 등)에서 얼마나 잘 되는지는 확인 못 함. 써 보고 이 문서에 결과를 적는다.
+- **확인 결과:** 두 도구 모두 영어권 채용 기준으로 만들어졌지만, hiring-panel은 한글 이력서에서도 잘 동작했고 career-ops는 한국어 모드(`modes/ko/`)가 있다. 국내 채용 사이트 공고를 실제로 긁어 오는 동작은 아직 확인 못 함.
 
 ## 분석 한계
 
 - 두 릴스 모두 음성 전사는 하지 않았다(캡션·화면 글자로 대체).
 - career-ops 릴스의 "고정 댓글 설치 방법"은 로그인이 필요해 못 봤다. 설치법은 공식 README로 대신했다.
-- 두 도구 모두 직접 설치해 돌려 보지는 않았다. 설치하면 `스킬_플러그인_레지스트리.md` B표와 `컴퓨터별_설치현황.md`로 옮긴다.
+- 설치·시험은 클라우드 작업 공간에서만 했다(위 "직접 시험한 결과"). 내 PC(Windows)에 설치하면 `스킬_플러그인_레지스트리.md` B표와 `컴퓨터별_설치현황.md`로 옮긴다.
 
 ## 출처
 
