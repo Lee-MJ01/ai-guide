@@ -1,6 +1,6 @@
 # AI 공통 작업 가이드 · 루트 인덱스
 
-> 요약: 모든 AI 작업의 출발점. 요청을 보고 아래 표에서 폴더를 고른 뒤, 그 폴더의 `index.md`만 열어 문서를 찾는다. | 갱신: 2026-11-20
+> 요약: 모든 AI 작업의 출발점. 요청을 보고 아래 표에서 폴더를 고른 뒤, 그 폴더의 `index.md`만 열어 문서를 찾는다. | 갱신: 2026-11-22
 
 - **원본(글):** GitHub `Lee-MJ01/ai-guide` (로컬 클론 `~/ai-guide`)
 - **자료 보관소(큰 파일·비밀):** Google Drive `내 드라이브/AI_공통_작업_가이드/` — 문서에서는 `[Drive]/경로`로 표기
@@ -15,7 +15,7 @@
    - 없으면 설치 명령을 사용자에게 보여 주고 승인을 받은 뒤 설치한다. 설치 후 `06_스킬_플러그인/컴퓨터별_설치현황.md`에 기록하고 push한다.
 4. **열지 않는 파일:**
    - `[Drive]` 아래의 `.md` → 옛 안내문이다. GitHub 쪽 같은 경로를 본다.
-   - 예외: `[Drive]/_개인/사용자_배경.md` (비공개 사용자 배경). 자소서·면접·기업분석·공고 선별에서 경험을 연결할 때만 연다.
+   - 예외: `[Drive]/_개인/사용자_배경.md` (비공개 사용자 배경)와 `[Drive]/_개인/취업/` (자소서·기업분석용 상세 경험 자료, `00_INDEX.md`부터). 자소서·면접·기업분석·공고 선별에서 경험을 연결할 때만 연다.
    - `[Drive]/_pdf_cache/*/full.md` 통째로 읽기 금지 → `notes.md`·`index.md`를 보고 `pages/pNNN.md`만 연다 (`tools/index.md`).
    - `[Drive]/05_LLM다루기/FreeLLMAPI-Sync/*.json` → 비밀키. freellmapi 작업일 때만, 값을 답변·문서에 옮기지 않는다.
    - `.pdf` 원본 → 먼저 `pdf-drive-analyzer` 스킬로 캐시를 만든 뒤 캐시를 읽는다.
@@ -28,6 +28,7 @@
 
 | 이런 요청이면 | 먼저 볼 곳 | 쓸 스킬·플러그인 |
 | --- | --- | --- |
+| 공고 선별 → 기업분석 → 자소서 키워드·초안 한 번에, 자소서 폴더 상태 정리 | `01_취업준비/지원_파이프라인_가이드.md` | kr-job-pipeline |
 | 채용공고 고르기, 기업·직무 분석 | `01_취업준비/index.md` | kr-company-research |
 | 자소서 작성·첨삭, AI 티 지우기 | `01_취업준비/index.md` | kr-cover-letter, korean-skills(humanizer) |
 | 면접 준비 | `01_취업준비/면접준비_가이드.md` | kr-company-research |
@@ -56,7 +57,7 @@
 | `05_LLM다루기/` | LLM 도구, 에이전트, 원격제어, 기억(MCP), FreeLLMAPI·Claude Code 자료 목록 |
 | `06_스킬_플러그인/` | 스킬·플러그인 레지스트리, 컴퓨터별 설치 현황, 새 PC 세팅 |
 | `07_디자인/` | UI/UX, Figma 디자인 시스템 |
-| `plugins/my-skills/` | 내가 만든 스킬 7종 원문 (Claude Code 마켓플레이스 형식) |
+| `plugins/my-skills/` | 내가 만든 스킬 8종 원문 (Claude Code 마켓플레이스 형식) |
 | `scripts/` | 설치 스크립트 (`install-ecc.cmd`) |
 | `tools/index.md` | Drive에 있는 스킬 실행용 도구(`pdf_ingest.py`, `_pdf_cache`) 사용법 |
 | `_정리대기.md` | 접근 못 한 링크, md로 안 바꾼 Drive PDF 목록. 사용자가 "정리 대기 처리해 줘"라고 할 때만 연다 |

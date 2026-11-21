@@ -17,4 +17,4 @@
 | `한국어_휴머나이저_korean-skills.md` | AI가 쓴 한국어 티 지우기 스킬 (릴스 정리) |
 | `취업AI도구_hiring-panel_career-ops.md` | 이력서 심사단 스킬(hiring-panel), 공고 거르기·지원 관리(career-ops) 설치·사용 |
 | `EarShot_에이전트_효과음_도구.md` | 에이전트가 효과음을 만들고 소리를 듣게 하는 플러그인·MCP (v1.0 설치법) |
-| `plugins/my-skills/` (저장소 루트) | 내가 만든 스킬 7종 원문. 고칠 때는 `00_공통기준/저장소_운영_규칙.md` 6장 |
+| `plugins/my-skills/` (저장소 루트) | 내가 만든 스킬 8종 원문. 고칠 때는 `00_공통기준/저장소_운영_규칙.md` 6장 |
