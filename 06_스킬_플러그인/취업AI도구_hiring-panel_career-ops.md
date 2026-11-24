@@ -1,6 +1,6 @@
 # 취업 AI 도구 2종 · hiring-panel(이력서 심사단) · career-ops(공고 거르기)
 
-> 요약: 이력서를 Claude 7명이 떨어뜨려 보고 고쳐 주는 hiring-panel 스킬과, 공고를 점수로 걸러 지원을 말려 주는 career-ops를 릴스 2개·소개 페이지·공식 README로 교차 확인해 정리했다. 둘 다 직접 설치해 봤고, hiring-panel은 가상 한글 이력서로 끝까지 돌렸다. | 언제: 이력서 점검, 지원할 공고 고르기, 취업용 Claude Code 도구 설치 검토 | 키워드: 이력서 첨삭, ATS, 서류 심사, 공고 선별, 지원 관리, 커버레터 | 관련 스킬: kr-cover-letter, kr-company-research | 출처: https://www.instagram.com/p/Df0d_Dvh6Rf/ , https://shimteamjjang.vercel.app/resume , https://www.instagram.com/p/DfW3k3Iss51/ | 갱신: 2026-11-22
+> 요약: 이력서를 Claude 7명이 떨어뜨려 보고 고쳐 주는 hiring-panel 스킬과, 공고를 점수로 걸러 지원을 말려 주는 career-ops를 릴스 2개·소개 페이지·공식 README로 교차 확인해 정리했다. 둘 다 직접 설치해 봤고, hiring-panel은 가상 한글 이력서로 끝까지 돌렸다. | 언제: 이력서 점검, 지원할 공고 고르기, 취업용 Claude Code 도구 설치 검토 | 키워드: 이력서 첨삭, ATS, 서류 심사, 공고 선별, 지원 관리, 커버레터 | 관련 스킬: kr-cover-letter, kr-company-research | 출처: https://www.instagram.com/p/Df0d_Dvh6Rf/ , https://shimteamjjang.vercel.app/resume , https://www.instagram.com/p/DfW3k3Iss51/ | 갱신: 2026-11-24
 
 ## 자료 정보
 
@@ -88,6 +88,23 @@ claude                            # 첫 실행 때 대화로 이력서·희망 �
 2. **기업·자소서:** 남은 공고는 kr-company-research → kr-cover-letter로 진행.
 3. **서류 마무리:** 이력서를 hiring-panel에 공고와 함께 돌린다 → `[ADD]` 빈칸을 내 실제 경험으로 채운다 → 한 번 더 돌려 자동 심사 통과 확인.
 4. 내 경력 자료는 `[Drive]/_개인/`에만 둔다. 결과 폴더(`.hiring-panel/`, `career-ops/`)를 이 공개 저장소 안에서 만들지 않는다.
+
+## 우리 스킬과 비교 (2026-11-24, career-ops 1.40 `modes/ko/`·`triage.md`·`_shared.md` 확인)
+
+결론: **대체하지 않고 장치만 가져왔다.** career-ops 한국어 모드는 영어 모드를 옮긴 것이라 경력직 테크 이직(이력서 PDF 맞춤, 연봉·스톡옵션 협상, AI 직군 archetype, LinkedIn) 중심이고, 국내 신입 공채의 문항별 자소서·글자 수·DART 기업분석·Drive 폴더 상태 관리가 없다. 실행도 Node 스크립트 200여 개와 별도 폴더(`cv.md`, `profile.yml`)를 전제한다.
+
+| career-ops 장치 | 가져간 곳 |
+| --- | --- |
+| triage: 작은 요약 파일만 읽고 1~5점 빠른 판정, 근거 없는 항목은 점수에서 빼고 재계산 | kr-job-pipeline Step 1 · `채용공고_선별_가이드.md` |
+| 블록 G 공고 신뢰도 + 한국 고용 조건(재게시·계약직 전환·3.3%·수습 감액·포괄임금) | 같은 곳의 `주의` 신호 |
+| 블록 B 두 번 나눠 채우기(공고만 보고 중요도 먼저, 그다음 CV 대조) | kr-job-pipeline 기업분석 §2 · kr-cover-letter Step 3 |
+| 결론(lead) + Score Evidence(근거 확실도) | 기업분석 §0 첫 두 줄 |
+| 공고 원문 보관(JD archived verbatim) | 기업분석 부록 |
+| patterns: 결과 5건 이상부터 탈락 패턴 분석 | kr-job-pipeline 6장 |
+| authorship 규칙(사용 ≠ 제작), 키워드는 다시 표현할 뿐 만들지 않음 | kr-cover-letter 원칙 1 |
+| STAR+R의 Reflection | kr-cover-letter 꼬리질문 답변 뼈대 |
+
+가져오지 않은 것: 이력서 PDF 생성·ATS 키워드 커버리지, 연봉 협상 스크립트, tracker TSV·스크립트, 리크루터 연락 초안. 영문 이력서로 외국계·경력직에 지원할 때는 career-ops를 그대로 쓰는 편이 낫다.
 
 ## 주장과 확인할 점
 

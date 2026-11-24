@@ -11,7 +11,7 @@
       "name": "my-skills",
       "source": "./plugins/my-skills",
       "description": "지원 파이프라인·자소서·기업분석·영상분석·PDF분석·FreeLLMAPI·Claude vs Codex 토론·가이드 자료 등록 스킬 8종",
-      "version": "1.2.1"
+      "version": "1.2.2"
     }
   ]
 }
