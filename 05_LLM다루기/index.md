@@ -8,7 +8,7 @@
 | `스마트폰-AI-원격제어.md` | 폰으로 Claude Code·Codex 이어서 지시 (`/remote-control`) | — |
 | `GPT-Astra-개발환경-연동도구-3종.md` | Context7·GPT Researcher·LangGraph로 코딩 에이전트 환경 보강 | — |
 | `Jev-TypeSafe-AI-초고속-판단모델.md` | 문장 대신 판단값만 주는 분류·판단 모델 | — |
-| `Basic-Memory_AI공용노트_MCP.md` | 여러 AI가 같은 기억 노트를 쓰게 하는 MCP 세팅 (세션 이어가기) | basic-memory MCP |
+| `Basic-Memory_AI공용노트_MCP.md` | 여러 AI가 같은 기억 노트를 쓰게 하는 MCP 세팅 (세션 이어가기). 프로젝트 저장소 안에서 이어가기는 `02_개발학습/Obsidian_개발팀_프로젝트_가이드.md` 9장 | basic-memory MCP |
 | `에이전트_하나_매뉴얼_운영법.md` | 에이전트를 늘리지 않고 작업별 매뉴얼(=스킬)·툴박스·검증 목록으로 운영하기 | skill-creator |
 | `Agent-Reach_웹수집_CLI.md` | Claude Code가 유튜브 자막·레딧·GitHub를 직접 검색·읽게 하는 CLI | youtube-watch와 나눠 씀 |
 | `MULTI_AGENT_GATEWAY_BUILD.md` | 주 에이전트 + 저비용 보조 모델(OmniRoute) 구현 요청서. 에이전트에 그대로 전달용 | — |

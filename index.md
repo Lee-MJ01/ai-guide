@@ -1,6 +1,6 @@
 # AI 공통 작업 가이드 · 루트 인덱스
 
-> 요약: 모든 AI 작업의 출발점. 요청을 보고 아래 표에서 폴더를 고른 뒤, 그 폴더의 `index.md`만 열어 문서를 찾는다. | 갱신: 2026-11-22
+> 요약: 모든 AI 작업의 출발점. 요청을 보고 아래 표에서 폴더를 고른 뒤, 그 폴더의 `index.md`만 열어 문서를 찾는다. | 갱신: 2026-11-25
 
 - **원본(글):** GitHub `Lee-MJ01/ai-guide` (로컬 클론 `~/ai-guide`)
 - **자료 보관소(큰 파일·비밀):** Google Drive `내 드라이브/AI_공통_작업_가이드/` — 문서에서는 `[Drive]/경로`로 표기
@@ -34,12 +34,13 @@
 | 면접 준비 | `01_취업준비/면접준비_가이드.md` | kr-company-research |
 | Java 알고리즘 코드 리뷰 | `02_개발학습/Java_알고리즘_코드리뷰_가이드.md` | — |
 | 프로젝트 코드 분석, Claude Code 개발 세팅 | `02_개발학습/index.md` | ECC |
+| 큰 프로젝트를 여러 세션·여러 AI로 이어가기, 팀 문서 체계(Obsidian) | `02_개발학습/Obsidian_개발팀_프로젝트_가이드.md` | obsidian-project-flow |
 | 유튜브·릴스 분석, 강의를 스킬로 | `03_조사계획/index.md` | youtube-watch |
 | PDF 분석·요약 | `tools/index.md` | pdf-drive-analyzer |
 | AI 뉴스 요약, 여행 일정 | `03_조사계획/index.md` | — |
 | 사진 편집, 영상 제작 | `04_콘텐츠제작/index.md` | hyperframes(설치된 PC만) |
 | LLM 도구·에이전트·Claude Code 활용법 | `05_LLM다루기/index.md` | freellmapi, duel-chat |
-| AI 바꿔도 작업 기억 이어가기 | `05_LLM다루기/Basic-Memory_AI공용노트_MCP.md` | basic-memory MCP |
+| AI 바꿔도 작업 기억 이어가기 (개인 대화 기억) | `05_LLM다루기/Basic-Memory_AI공용노트_MCP.md` | basic-memory MCP |
 | 스킬·플러그인 찾기, 새 PC 세팅 | `06_스킬_플러그인/index.md` | — |
 | 앱 화면(MVP)을 Figma 디자인 시스템으로 | `07_디자인/index.md` | Figma 커넥터 |
 | 영상·링크·PDF를 가이드에 정리해 넣기 | `00_공통기준/새_자료_정리_규칙.md` | ai-guide-intake |
@@ -51,13 +52,13 @@
 | --- | --- |
 | `00_공통기준/` | 공통 원칙, 저장소 운영 규칙, 새 자료 정리 규칙, AI 연결 설정 문구 |
 | `01_취업준비/` | 공고 선별, 기업·직무 분석, 자소서, 면접 |
-| `02_개발학습/` | Java 코드 리뷰, 프로젝트 분석, Claude Code 개발 세팅(ECC) |
+| `02_개발학습/` | Java 코드 리뷰, 프로젝트 분석, Claude Code 개발 세팅(ECC), Obsidian 팀 문서·AI 인수인계 |
 | `03_조사계획/` | 뉴스 요약, 여행 일정, 영상 분석 구조 |
 | `04_콘텐츠제작/` | 사진·영상 등 결과물 제작 |
 | `05_LLM다루기/` | LLM 도구, 에이전트, 원격제어, 기억(MCP), FreeLLMAPI·Claude Code 자료 목록 |
 | `06_스킬_플러그인/` | 스킬·플러그인 레지스트리, 컴퓨터별 설치 현황, 새 PC 세팅 |
 | `07_디자인/` | UI/UX, Figma 디자인 시스템 |
-| `plugins/my-skills/` | 내가 만든 스킬 8종 원문 (Claude Code 마켓플레이스 형식) |
+| `plugins/my-skills/` | 내가 만든 스킬 9종 원문 (Claude Code 마켓플레이스 형식) |
 | `scripts/` | 설치 스크립트 (`install-ecc.cmd`) |
 | `tools/index.md` | Drive에 있는 스킬 실행용 도구(`pdf_ingest.py`, `_pdf_cache`) 사용법 |
 | `_정리대기.md` | 접근 못 한 링크, md로 안 바꾼 Drive PDF 목록. 사용자가 "정리 대기 처리해 줘"라고 할 때만 연다 |
