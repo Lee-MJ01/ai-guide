@@ -35,6 +35,7 @@
 | Java 알고리즘 코드 리뷰 | `02_개발학습/Java_알고리즘_코드리뷰_가이드.md` | — |
 | 프로젝트 코드 분석, Claude Code 개발 세팅 | `02_개발학습/index.md` | ECC |
 | 큰 프로젝트를 여러 세션·여러 AI로 이어가기, 팀 문서 체계(Obsidian) | `02_개발학습/Obsidian_개발팀_프로젝트_가이드.md` | obsidian-project-flow |
+| 조회수 기능 설계·구현 (중복·봇 제외, 인기순) | `02_개발학습/조회수_집계_설계_가이드.md` | — |
 | 유튜브·릴스 분석, 강의를 스킬로 | `03_조사계획/index.md` | youtube-watch |
 | PDF 분석·요약 | `tools/index.md` | pdf-drive-analyzer |
 | AI 뉴스 요약, 여행 일정 | `03_조사계획/index.md` | — |
